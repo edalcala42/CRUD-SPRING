@@ -19,6 +19,8 @@ public class Empresa {
     private String nombre;
 
     @OneToMany(
+            cascade = CascadeType.REMOVE,
+            orphanRemoval = true,
             mappedBy = "empresa"
     )
     @JsonManagedReference
